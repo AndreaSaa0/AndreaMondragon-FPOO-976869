@@ -37,6 +37,17 @@ def select_role():
             person["role"] = "Estudiante"
 
 
+def match_role():
+    for person in people_list:
+        match person["role"]:
+            case "Administrativo":
+                person["role"] = 1
+            case "Profesor":
+                person["role"] = 2
+            case "Estudiante":
+                person["role"] = 3
+
+
 def print_people():
     for persona in people_list:
         print(persona)
@@ -47,4 +58,5 @@ def print_people():
 number = int(input("Por favor ingrese la cantidad de usuarios:\n"))
 generate_people(number)
 select_role()
+match_role()
 print_people()
